@@ -1,11 +1,17 @@
 .App {
     --header_height: 60px;
+    padding: 70px;
 }
 
 .hw {
-
+    min-height: 40vh;
 }
 
 .hwTitle {
-
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 1px;
 }
