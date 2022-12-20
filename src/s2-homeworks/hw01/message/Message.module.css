@@ -25,6 +25,7 @@
 }
 
 .text {
+    position: relative;
     padding-right: 5px;
     font-style: normal;
     font-size: 16px;
@@ -37,8 +38,8 @@
     background-color: #0066CC;
     height: 40px;
     width: 30px;
-    top: 13.80em;
-    right: 6.4em;
+    top: 0.7em;
+    right: -2em;
     position: absolute;
     clip-path: polygon(0 35%, 0% 100%, 100% 100%);
 }
