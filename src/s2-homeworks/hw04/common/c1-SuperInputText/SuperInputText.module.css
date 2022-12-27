@@ -1,20 +1,33 @@
 .input:focus {
+    opacity: 1;
 }
 
 .input {
+    padding: 10px;
+    width: 372px;
+    height: 36px;
+    border-radius: 3px;
 }
 
 .inputWrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .superInput {
+    opacity: 0.3;
 }
 
 .errorInput {
+    border: 1px solid #cc0000;
 }
 
 .errorInput:focus {
+    outline: none;
 }
 
 .error {
+    margin-bottom: 5px;
+    order: -1;
+    color: red;
 }

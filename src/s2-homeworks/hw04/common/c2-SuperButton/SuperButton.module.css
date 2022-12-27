@@ -1,23 +1,38 @@
 .button {
+    width: 132px;
+    height: 30px;
+    border-radius: 3px;
 }
 
 .disabled {
+    background: #5eaefd;
 }
 
 .secondary {
+    background: #FFFFFF;
+    color: #0059b3;
+    border-color: #0059b3;
+    width: 176px
 }
 
 .default {
+    border: none;
+    color: white;
+    background: #1a8afa;
 }
 
 .red {
+    border: none;
+    color: white;
     background: red;
 }
 
 .default:hover {
+    width: 176px
 }
 
 .red:hover {
+    width: 176px
 }
 
 .secondary:hover {
@@ -25,12 +40,15 @@
 
 
 .default:active {
+    width: 150px
 }
 
 .secondary:active {
+    width: 150px
 }
 
 .red:active {
+    width: 150px
 }
 
 .button:disabled {
