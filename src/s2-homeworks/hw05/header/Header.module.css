@@ -1,7 +1,15 @@
 .burgerMenuIcon {
+    transition: 1s ease-in-out;
+}
+
+.burgerMenuIcon:hover {
+    transform: rotate(90deg);
+    color: #FF9900;
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header h1 {
