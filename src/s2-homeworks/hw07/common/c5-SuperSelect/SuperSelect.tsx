@@ -12,14 +12,13 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
     options?: any[]
-    onChangeOption?: (option: any) => void
+    callBackChangeValueIntoNumber?: (option: any) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
     options,
     className,
-    onChange,
-    onChangeOption,
+    onChange, callBackChangeValueIntoNumber,
     ...restProps
 }) => {
     const mappedOptions: any[] = options
@@ -37,6 +36,8 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         // делают студенты
+
+        callBackChangeValueIntoNumber && callBackChangeValueIntoNumber(e.currentTarget.value)
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')

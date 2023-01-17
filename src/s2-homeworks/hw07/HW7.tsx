@@ -12,18 +12,25 @@ import s from './HW7.module.css'
 * */
 
 const arr = [
-    { id: 1, value: 'x' },
-    { id: 2, value: 'y' },
-    { id: 3, value: 'z' },
+    { id: 1, value: 'Pre-Junior' },
+    { id: 2, value: 'Junior' },
+    { id: 3, value: 'Junior +' },
 ] // value может быть изменено
 
 const HW7 = () => {
-    const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
+    const [value, onChangeOption] = useState<number>(1) // селект и радио должны работать синхронно
+
+    const callBackChangeValueIntoNumber = (value: any) => {
+        let newValue = Number(value)
+        onChangeOption(newValue)
+    }
 
     return (
         <div id={'hw7'}>
-            <div className={s2.hwTitle}>Homework #7</div>
-
+            <div className={s2.hwTitle}>
+                <hr className={s.hr}/>
+                Homework #7</div>
+                <hr/>
             {/*демонстрация возможностей компонент:*/}
             <div className={s2.hw}>
                 <div className={s.container}>
@@ -32,7 +39,7 @@ const HW7 = () => {
                             id={'hw7-super-select'}
                             options={arr}
                             value={value}
-                            onChangeOption={onChangeOption}
+                            callBackChangeValueIntoNumber={callBackChangeValueIntoNumber}
                         />
                     </div>
                     <div>
@@ -41,7 +48,7 @@ const HW7 = () => {
                             name={'hw7-radio'}
                             options={arr}
                             value={value}
-                            onChangeOption={onChangeOption}
+                            callBackChangeValueIntoNumber={callBackChangeValueIntoNumber}
                         />
                     </div>
                 </div>
