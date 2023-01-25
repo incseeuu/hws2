@@ -1,23 +1,38 @@
 .item {
+
 }
 
 .item:last-of-type {
+
 }
 
 .users {
+    border-collapse: separate;
+    border-spacing: 100px 20px;
 }
 
 .buttonsContainer {
+    display: flex;
+    gap: 10px;
+    margin-left: 200px;
+    margin-top: 20px;
 }
 
 .container {
+    margin-left: 30px;
 }
 
 .thead {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
 }
 
 .nameCol {
+
 }
 
 .ageCol {
+
 }
