@@ -26,6 +26,7 @@ const initialPeople: UserType[] = [
     {_id: 4, name: 'Дмитрий', age: 40},
     {_id: 5, name: 'Ирина', age: 55},
 ]
+const copy = initialPeople.map(el => el)
 
 const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
