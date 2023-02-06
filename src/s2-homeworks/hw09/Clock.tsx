@@ -32,14 +32,10 @@ function Clock() {
         setShow(false)
     }
 
-    // const stringTime = date.toLocaleTimeString("ru-RU") || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringTime = date.toLocaleString('ru-RU', {
-        timeZone: 'Europe/Moscow',
-        hourCycle: 'h23',
-        hour: "2-digit",
-        minute: "2-digit"
+    const stringTime = date.toLocaleTimeString('en-GB', {
+        timeZone: 'UTC'
     }) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date.toLocaleDateString("ru-RU", { // you can use undefined as first argument
+    const stringDate = date.toLocaleDateString("ru-RU", {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
