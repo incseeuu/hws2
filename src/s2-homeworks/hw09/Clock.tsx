@@ -40,7 +40,6 @@ function Clock() {
         month: "2-digit",
         day: "2-digit",
     }) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
-    console.log(stringTime)
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date) || <br/> // пишут студенты
