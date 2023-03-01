@@ -19,8 +19,10 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [disable, setDisable] = useState(false)
 
     const send = (x?: boolean | null) => () => {
+        setDisable(true)
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -37,17 +39,39 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-
+                setText('...всё ок)')
+                setInfo('код 200 - обычно означает, что скорее всего все ок)')
+                setDisable(false)
             })
             .catch((e) => {
                 // дописать
-
+                setDisable(false)
+                if(e.response.status === 500){
+                    setCode('Ошибка 500!')
+                    setImage(error500)
+                    setText('эмитация ошибки на сервер')
+                    setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                }
+                if(e.response.status === 400){
+                    setCode('Ошибка 400!')
+                    setImage(error400)
+                    setText('Ты не отправил success в body вообще!')
+                    setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                }
+                if(e.code === 'ERR_NETWORK'){
+                    setCode('Error!')
+                    setImage(errorUnknown)
+                    setText('Network Error')
+                    setInfo('AxiosError')
+                }
             })
     }
 
     return (
         <div id={'hw13'}>
+            <hr/>
             <div className={s2.hwTitle}>Homework #13</div>
+            <hr/>
 
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
@@ -56,7 +80,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={disable}
                     >
                         Send true
                     </SuperButton>
@@ -65,7 +89,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={disable}
                     >
                         Send false
                     </SuperButton>
@@ -74,7 +98,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={disable}
                     >
                         Send undefined
                     </SuperButton>
@@ -83,7 +107,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+                        disabled={disable}
                     >
                         Send null
                     </SuperButton>
@@ -95,9 +119,9 @@ const HW13 = () => {
                     </div>
 
                     <div className={s.textContainer}>
-                        <div id={'hw13-code'} className={s.code}>
+                        <h1 id={'hw13-code'} className={s.code}>
                             {code}
-                        </div>
+                        </h1>
                         <div id={'hw13-text'} className={s.text}>
                             {text}
                         </div>
