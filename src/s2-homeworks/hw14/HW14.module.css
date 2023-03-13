@@ -1,7 +1,10 @@
 .tech {
-
+    margin-top: 5px;
 }
 
 .loading {
-
+    position: absolute;
+    left: 370px;
+    margin-top: 5px;
+    opacity: 0.8;
 }
