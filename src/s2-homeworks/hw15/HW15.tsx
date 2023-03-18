@@ -54,7 +54,6 @@ const HW15 = () => {
             .then((res) => {
                 // делает студент
                 if(res){
-                    console.log(res)
                     setLoading(false)
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
@@ -83,8 +82,9 @@ const HW15 = () => {
         // делает студент
         setSort(newSort)
         setPage(1)
-        sendQuery({page, count, sort})
-        setSearchParams({page: ''+page, count: ''+count})
+
+        setSearchParams({page: ''+page, count: ''+count, sort: newSort})
+        sendQuery({page, count, sort: newSort})
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
 
